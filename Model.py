@@ -22,6 +22,7 @@ from sklearn.neural_network import *
 from sklearn.tree import *
 from sklearn.linear_model import *
 from sklearn.ensemble import *
+from sklearn.semi_supervised import *
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import OneHotEncoder, FunctionTransformer
@@ -42,9 +43,9 @@ print(y.ndim, y.shape)
 
 # Modèles à tester
 models = [SVC(C=1., gamma="auto", kernel="poly"),
-          DecisionTreeClassifier(criterion="gini", splitter="best", max_features=3),
-          ExtraTreeClassifier(splitter="best", max_features=3),
-          HistGradientBoostingClassifier(categorical_features=[2, 3, 4, 5], interaction_cst=[(0, 3), (1,4), (2,5)]),
+          DecisionTreeClassifier(criterion="gini", splitter="random", max_features=3),
+          ExtraTreeClassifier(splitter="random", max_features=3),
+          HistGradientBoostingClassifier(categorical_features=[2, 3, 4, 5]),
           MLPClassifier(max_iter=5000, learning_rate="constant")
           ]
 
