@@ -46,7 +46,7 @@ models = [SVC(C=1., gamma="auto", kernel="poly"),
           DecisionTreeClassifier(criterion="gini", splitter="random", max_features=3),
           ExtraTreeClassifier(splitter="random", max_features=3),
           HistGradientBoostingClassifier(categorical_features=[2, 3, 4, 5]),
-          MLPClassifier(hidden_layer_sizes=(50,), max_iter=5000, learning_rate="constant")
+          MLPClassifier(max_iter=5000, learning_rate="constant")
           ]
 
 # Écarte aléatoirement 20 % des données pour la vérification de précision
